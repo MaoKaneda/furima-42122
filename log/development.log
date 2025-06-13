@@ -365,3 +365,347 @@ Completed 200 OK in 117ms (Views: 114.8ms | ActiveRecord: 1.1ms | Allocations: 9
   [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
   [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
   [1m[36mActiveRecord::SchemaMigration Load (4.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:49:11 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+Filter chain halted as :basic_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 969)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:49:18 +0900
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 133.5ms | Allocations: 27935)
+  [1m[36mItem Load (7.4ms)[0m  [1m[34mSELECT `items`.* FROM `items`[0m
+  ↳ app/views/items/index.html.erb:130
+  Rendered shared/_footer.html.erb (Duration: 2.9ms | Allocations: 1605)
+  Rendered items/index.html.erb within layouts/application (Duration: 163.2ms | Allocations: 37284)
+  Rendered layout layouts/application.html.erb (Duration: 214.0ms | Allocations: 52795)
+Completed 200 OK in 258ms (Views: 211.3ms | ActiveRecord: 9.0ms | Allocations: 58973)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-06-13 19:49:29 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 577)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3996)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 5970)
+Completed 200 OK in 140ms (Views: 14.5ms | ActiveRecord: 75.3ms | Allocations: 19325)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-06-13 19:49:37 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'maddieqqie@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 30ms (ActiveRecord: 4.7ms | Allocations: 4125)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2743)
+Completed 200 OK in 566ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4503)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-06-13 19:49:40 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.3ms | Allocations: 220)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 83)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1596)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 3469)
+Completed 200 OK in 21ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 4488)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-06-13 19:49:49 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = CAST('maddieqqie@gmail.com' AS BINARY) LIMIT 1[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 475)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1815)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3685)
+Completed 422 Unprocessable Content in 319ms (Views: 8.6ms | ActiveRecord: 8.1ms | Allocations: 10089)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-06-13 19:50:00 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = CAST('maddieqqie@gmail.com' AS BINARY) LIMIT 1[0m
+  [1m[36mUser Create (20.2ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`) VALUES ('maddieqqie@gmail.com', '$2a$12$9hOvySWoX3GqLui./lCQsesS452/nkBGWvG6d76I5av1J9PH3GI.i', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2025-06-13 10:50:00.406890', '2025-06-13 10:50:00.406890')[0m
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 326ms (ActiveRecord: 28.4ms | Allocations: 7409)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:50:00 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 9.3ms | Allocations: 3441)
+  Rendered items/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3553)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3644)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 3975)
+
+
+  
+ActionView::Template::Error (undefined method `nickname' for #<User id: 1, email: "maddieqqie@gmail.com", created_at: "2025-06-13 10:50:00.406890000 +0000", updated_at: "2025-06-13 10:50:00.406890000 +0000">):
+    16:     </ul>
+    17:     <ul class='lists-right'>
+    18:       <% if user_signed_in? %>
+    19:       <li><%= link_to "#{current_user.nickname}", "#", class: "user-nickname" %></li>
+    20:       <li><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %></li>
+    21:       <% else %>
+    22:       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+  
+app/views/shared/_header.html.erb:19
+app/views/items/index.html.erb:1
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-06-13 19:50:38 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 120ms (ActiveRecord: 69.9ms | Allocations: 17546)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:50:43 +0900
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (18.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 80.1ms | Allocations: 28582)
+  Rendered items/index.html.erb within layouts/application (Duration: 83.6ms | Allocations: 30366)
+  Rendered layout layouts/application.html.erb (Duration: 83.7ms | Allocations: 30483)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 18.6ms | Allocations: 34230)
+
+
+  
+ActionView::Template::Error (undefined method `nickname' for #<User id: 1, email: "maddieqqie@gmail.com", created_at: "2025-06-13 10:50:00.406890000 +0000", updated_at: "2025-06-13 10:50:00.406890000 +0000">):
+    16:     </ul>
+    17:     <ul class='lists-right'>
+    18:       <% if user_signed_in? %>
+    19:         <li><%= link_to "#{current_user.nickname}", "#", class: "user-nickname" %></li>
+    20:         <li><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %></li>
+    21:       <% else %>
+    22:         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+  
+app/views/shared/_header.html.erb:19
+app/views/items/index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:50:46 +0900
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 14.2ms | Allocations: 3229)
+  Rendered items/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3296)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 3387)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.1ms | Allocations: 3658)
+
+
+  
+ActionView::Template::Error (undefined method `nickname' for #<User id: 1, email: "maddieqqie@gmail.com", created_at: "2025-06-13 10:50:00.406890000 +0000", updated_at: "2025-06-13 10:50:00.406890000 +0000">):
+    16:     </ul>
+    17:     <ul class='lists-right'>
+    18:       <% if user_signed_in? %>
+    19:         <li><%= link_to "#{current_user.nickname}", "#", class: "user-nickname" %></li>
+    20:         <li><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %></li>
+    21:       <% else %>
+    22:         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+  
+app/views/shared/_header.html.erb:19
+app/views/items/index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:50:54 +0900
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 19.7ms | Allocations: 3226)
+  Rendered items/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 3293)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 3384)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.9ms | Allocations: 3654)
+
+
+  
+ActionView::Template::Error (undefined method `nickname' for #<User id: 1, email: "maddieqqie@gmail.com", created_at: "2025-06-13 10:50:00.406890000 +0000", updated_at: "2025-06-13 10:50:00.406890000 +0000">):
+    16:     </ul>
+    17:     <ul class='lists-right'>
+    18:       <% if user_signed_in? %>
+    19:         <li><%= link_to "#{current_user.nickname}", "#", class: "user-nickname" %></li>
+    20:         <li><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %></li>
+    21:       <% else %>
+    22:         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+  
+app/views/shared/_header.html.erb:19
+app/views/items/index.html.erb:1
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.0ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddDeviseToUsers (20250613105219)
+  [1m[35m (24.3ms)[0m  [1m[35mALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:53:51 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 171.0ms | Allocations: 42271)
+  Rendered items/index.html.erb within layouts/application (Duration: 175.8ms | Allocations: 44057)
+  Rendered layout layouts/application.html.erb (Duration: 176.0ms | Allocations: 44174)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 102.5ms | Allocations: 50788)
+
+
+  
+ActionView::Template::Error (undefined method `nickname' for #<User id: 1, email: "maddieqqie@gmail.com", created_at: "2025-06-13 10:50:00.406890000 +0000", updated_at: "2025-06-13 10:50:00.406890000 +0000">):
+    16:     </ul>
+    17:     <ul class='lists-right'>
+    18:       <% if user_signed_in? %>
+    19:         <li><%= link_to "#{current_user.nickname}", "#", class: "user-nickname" %></li>
+    20:         <li><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %></li>
+    21:       <% else %>
+    22:         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+  
+app/views/shared/_header.html.erb:19
+app/views/items/index.html.erb:1
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.6ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddNicknameToUsers (20250613105425)
+  [1m[35m (103.5ms)[0m  [1m[35mALTER TABLE `users` ADD `nickname` varchar(255)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250613105425')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:54:37 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (53.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 342.5ms | Allocations: 41232)
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT `items`.* FROM `items`[0m
+  ↳ app/views/items/index.html.erb:130
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 1600)
+  Rendered items/index.html.erb within layouts/application (Duration: 356.9ms | Allocations: 50332)
+  Rendered layout layouts/application.html.erb (Duration: 372.2ms | Allocations: 65805)
+Completed 200 OK in 406ms (Views: 142.3ms | ActiveRecord: 246.0ms | Allocations: 72459)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:54:43 +0900
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 21.2ms | Allocations: 2077)
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT `items`.* FROM `items`[0m
+  ↳ app/views/items/index.html.erb:130
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 1067)
+  Rendered items/index.html.erb within layouts/application (Duration: 41.4ms | Allocations: 8546)
+  Rendered layout layouts/application.html.erb (Duration: 49.9ms | Allocations: 10262)
+Completed 200 OK in 53ms (Views: 47.3ms | ActiveRecord: 4.4ms | Allocations: 10543)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2025-06-13 19:54:46 +0900
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 28ms (ActiveRecord: 3.1ms | Allocations: 3567)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:54:46 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 3.4ms | Allocations: 1536)
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT `items`.* FROM `items`[0m
+  ↳ app/views/items/index.html.erb:130
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 1074)
+  Rendered items/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 8135)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 9899)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.8ms | Allocations: 10220)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-06-13 19:54:48 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 225)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 527)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 3160)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 5097)
+Completed 200 OK in 26ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 6490)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-06-13 19:54:52 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 2.8ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 28.5ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 87.0ms | Allocations: 2766)
+Completed 200 OK in 108ms (Views: 92.7ms | ActiveRecord: 0.0ms | Allocations: 3444)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-06-13 19:54:52 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1432)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3305)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 4247)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-06-13 19:54:57 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'maddieqqie@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 447ms (ActiveRecord: 3.8ms | Allocations: 3954)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-13 19:54:58 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 4.0ms | Allocations: 2050)
+  [1m[36mItem Load (2.5ms)[0m  [1m[34mSELECT `items`.* FROM `items`[0m
+  ↳ app/views/items/index.html.erb:130
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 1067)
+  Rendered items/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 8550)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 10269)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 3.4ms | Allocations: 10546)
+
+
