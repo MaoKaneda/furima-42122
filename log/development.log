@@ -554,3 +554,98 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 0.0ms | Allocations: 9423)
 
 
+Started GET "/" for 127.0.0.1 at 2025-06-13 21:40:37 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 75.6ms | Allocations: 56087)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 1583)
+  Rendered items/index.html.erb within layouts/application (Duration: 82.0ms | Allocations: 65214)
+  Rendered layout layouts/application.html.erb (Duration: 95.8ms | Allocations: 81940)
+Completed 200 OK in 316ms (Views: 98.4ms | ActiveRecord: 0.0ms | Allocations: 368491)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-06-13 21:40:43 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 3.2ms | Allocations: 771)
+  Rendered shared/_second-footer.html.erb (Duration: 0.9ms | Allocations: 410)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2472)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 5550)
+Completed 200 OK in 190ms (Views: 16.3ms | ActiveRecord: 102.5ms | Allocations: 18163)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-13 21:40:47 +0900
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 6.7ms | Allocations: 1424)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 1073)
+  Rendered items/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 8205)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 11247)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.0ms | Allocations: 11511)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-06-13 21:40:49 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 0.8ms | Allocations: 597)
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 206)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4054)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4145)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 5184)
+
+
+  
+ActionView::Template::Error (undefined method `map' for "Translation missing: ja.date.order":String):
+    75:     </div>
+    76:     <div class='input-birth-wrap'>
+    77:       <%= raw sprintf(
+    78:                   f.date_select(
+    79:                     :birth_date,
+    80:                     class:'select-birth',
+    81:                     id:"birth-date",
+  
+app/views/devise/registrations/new.html.erb:78
+app/views/devise/registrations/new.html.erb:4
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-06-13 21:47:16 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 36.7ms | Allocations: 27348)
+  Rendered shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 215)
+  Rendered shared/_second-footer.html.erb (Duration: 0.4ms | Allocations: 410)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 48.1ms | Allocations: 32230)
+  Rendered layout layouts/application.html.erb (Duration: 58.3ms | Allocations: 48994)
+Completed 200 OK in 375ms (Views: 307.3ms | ActiveRecord: 40.9ms | Allocations: 347883)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-06-13 21:48:03 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nickname"=>"Maddie", "email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "last_name"=>"兼田", "first_name"=>"まお", "last_name_kana"=>"カネダ", "first_name_kana"=>"マオ", "birth_date(1i)"=>"2000", "birth_date(2i)"=>"10", "birth_date(3i)"=>"10"}, "commit"=>"会員登録"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = CAST('maddieqqie@gmail.com' AS BINARY) LIMIT 1[0m
+  [1m[36mUser Create (28.8ms)[0m  [1m[32mINSERT INTO `users` (`nickname`, `last_name`, `first_name`, `last_name_kana`, `first_name_kana`, `birth_date`, `email`, `encrypted_password`, `created_at`, `updated_at`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`) VALUES ('Maddie', '兼田', 'まお', 'カネダ', 'マオ', '2000-10-10', 'maddieqqie@gmail.com', '$2a$12$rGl6zpAznjSDCIJ5WTV./uFYjzV4i9sBqivhtxkTvRXspHuX9koMq', '2025-06-13 12:48:04.187233', '2025-06-13 12:48:04.187233', NULL, NULL, NULL)[0m
+  [1m[36mTRANSACTION (44.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 688ms (ActiveRecord: 115.9ms | Allocations: 309316)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-13 21:48:04 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 47.9ms | Allocations: 29626)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 1601)
+  Rendered items/index.html.erb within layouts/application (Duration: 66.1ms | Allocations: 39007)
+  Rendered layout layouts/application.html.erb (Duration: 76.1ms | Allocations: 55789)
+Completed 200 OK in 80ms (Views: 76.5ms | ActiveRecord: 1.2ms | Allocations: 57490)
+
+
