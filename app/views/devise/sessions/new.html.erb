@@ -4,7 +4,15 @@
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
-@@ -16,14 +16,14 @@
+      会員情報入力
+    </h1>
+  </div>
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
       <span class="indispensable">必須</span>
     </div>
@@ -19,3 +27,8 @@
   </div>
   <div class='login-btn'>
     <%= f.submit "ログイン" ,class:"login-red-btn" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "shared/second-footer"%>
