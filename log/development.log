@@ -22,3 +22,11 @@ Migrating to AddDeviseToUsers (20250610104402)
   [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE DATABASE `furima42122` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE DATABASE `furima42122` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.7ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddDeviseToUsers (20250610104402)
+  [1m[35m (36.4ms)[0m  [1m[35mALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
