@@ -160,3 +160,138 @@ Migrating to CreateUsers (20250613100207)
   [1m[36mActiveRecord::SchemaMigration Create (13.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250613100207')[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2025-06-13 19:10:37 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (23.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/maokaneda/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/maokaneda/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 375)
+Completed 200 OK in 1052ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 978457)
+
+
+Started GET "/prototypes/new" for ::1 at 2025-06-13 19:10:41 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/prototypes/new"):
+  
+Started GET "/" for ::1 at 2025-06-13 19:10:49 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/maokaneda/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/maokaneda/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 13)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 208)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:11:15 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/maokaneda/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/maokaneda/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 375)
+Completed 200 OK in 219ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 285704)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:11:55 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (10.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/maokaneda/projects/furima-42122/app/controllers/application_controller.rb:17: syntax error, unexpected `end'):
+  
+app/controllers/application_controller.rb:17: syntax error, unexpected `end'
+app/controllers/items_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2025-06-13 19:13:05 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (13.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+Filter chain halted as :basic_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 969)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:13:29 +0900
+Processing by ItemsController#index as HTML
+Filter chain halted as :basic_auth rendered or redirected
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 105)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:13:42 +0900
+Processing by ItemsController#index as HTML
+Filter chain halted as :basic_auth rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 76)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:13:56 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (4.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+Filter chain halted as :basic_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 969)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:14:14 +0900
+Processing by ItemsController#index as HTML
+Filter chain halted as :basic_auth rendered or redirected
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 104)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:15:47 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (6.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2850)
+
+
+  
+NameError (uninitialized constant ItemsController::Item):
+  
+app/controllers/items_controller.rb:3:in `index'
+  [1m[36mActiveRecord::SchemaMigration Load (4.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to CreateItems (20250613101617)
+  [1m[35m (66.2ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` text, `category_id` int, `condition_id` int, `shipping_fee_id` int, `prefecture_id` int, `shipping_day_id` int, `price` int, `image` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250613101617')[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2025-06-13 19:16:34 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 227.2ms | Allocations: 107385)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 1587)
+  Rendered items/index.html.erb within layouts/application (Duration: 234.1ms | Allocations: 116516)
+  Rendered layout layouts/application.html.erb (Duration: 252.4ms | Allocations: 132176)
+Completed 200 OK in 571ms (Views: 258.5ms | ActiveRecord: 0.0ms | Allocations: 421567)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:16:49 +0900
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 10.2ms | Allocations: 1085)
+  Rendered shared/_footer.html.erb (Duration: 4.6ms | Allocations: 1073)
+  Rendered items/index.html.erb within layouts/application (Duration: 45.1ms | Allocations: 7867)
+  Rendered layout layouts/application.html.erb (Duration: 79.4ms | Allocations: 12392)
+Completed 200 OK in 81ms (Views: 80.3ms | ActiveRecord: 0.0ms | Allocations: 12673)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:16:50 +0900
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 2.4ms | Allocations: 1070)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 1069)
+  Rendered items/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 7817)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 9800)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 10072)
+
+
+Started GET "/" for ::1 at 2025-06-13 19:16:51 +0900
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 1.9ms | Allocations: 1070)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 1067)
+  Rendered items/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 7779)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 9753)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 10031)
+
+
