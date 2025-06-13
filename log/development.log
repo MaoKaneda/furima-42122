@@ -30,3 +30,133 @@ Migrating to AddDeviseToUsers (20250610104402)
 Migrating to AddDeviseToUsers (20250610104402)
   [1m[35m (36.4ms)[0m  [1m[35mALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddDeviseToUsers (20250610104402)
+  [1m[35m (26.8ms)[0m  [1m[35mALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddDeviseToUsers (20250610104402)
+  [1m[35m (40.7ms)[0m  [1m[35mALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddDeviseToUsers (20250609104402)
+  [1m[35m (14.6ms)[0m  [1m[35mALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddDeviseToUsers (20250609104402)
+  [1m[35m (17.9ms)[0m  [1m[35mALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (84.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `furima42122`[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE DATABASE `furima42122` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE `furima42122` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (34.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2025-06-13 09:56:46.646812', '2025-06-13 09:56:46.646815')[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (18.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS `furima42122`[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE DATABASE `furima42122` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE `furima42122` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2025-06-13 09:56:50.470035', '2025-06-13 09:56:50.470037')[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (31.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `furima42122`[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE DATABASE `furima42122` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE `furima42122` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2025-06-13 09:56:54.478975', '2025-06-13 09:56:54.478981')[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (38.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to DeviseCreateUsers (20250610133033)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddDeviseToUsers (20250613100207)
+  [1m[35m (16.9ms)[0m  [1m[35mALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('8447541316450885320', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to CreateUsers (20250613100207)
+  [1m[35m (60.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime(6), `remember_created_at` datetime(6), `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime(6), `last_sign_in_at` datetime(6), `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (41.5ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (13.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250613100207')[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('8447541316450885320')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
