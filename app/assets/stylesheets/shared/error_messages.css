@@ -1,32 +1,11 @@
-.error-messages {
-  color: #dc3545;
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
-  border-radius: 4px;
-  padding: 15px;
-  margin-bottom: 20px;
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
 }
 
-.error-messages h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.error-messages ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.error-messages li {
-  margin-bottom: 5px;
-}
-
-.field_with_errors {
-  display: inline;
-}
-
-.field_with_errors input,
-.field_with_errors textarea {
-  border: 1px solid #dc3545;
-  background-color: #fff8f8;
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
 }
