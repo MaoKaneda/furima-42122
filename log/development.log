@@ -1318,3 +1318,13 @@ Migrating to CreateItems (20250617060754)
   [1m[36mActiveRecord::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250617060754')[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('4845388998209683455')[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2025-06-17 15:15:12 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (4.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 2304)
+
+
+  
+NameError (uninitialized constant ItemsController::Item):
+  
+app/controllers/items_controller.rb:3:in `index'
