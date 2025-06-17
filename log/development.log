@@ -1353,3 +1353,52 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 332ms (Views: 123.1ms | ActiveRecord: 0.0ms | Allocations: 354862)
 
 
+Started GET "/" for ::1 at 2025-06-17 15:18:52 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 72.5ms | Allocations: 37198)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 1609)
+  Rendered items/index.html.erb within layouts/application (Duration: 83.0ms | Allocations: 46600)
+  Rendered layout layouts/application.html.erb (Duration: 94.2ms | Allocations: 64599)
+Completed 200 OK in 284ms (Views: 96.5ms | ActiveRecord: 0.0ms | Allocations: 354068)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-06-17 15:18:54 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 0.9ms | Allocations: 786)
+  Rendered shared/_second-footer.html.erb (Duration: 0.4ms | Allocations: 415)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 5168)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 8857)
+Completed 200 OK in 89ms (Views: 32.3ms | ActiveRecord: 30.7ms | Allocations: 27233)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-06-17 15:19:24 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 6.0ms | Allocations: 613)
+  Rendered shared/_second-footer.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 18.6ms | Allocations: 2907)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 6395)
+Completed 200 OK in 41ms (Views: 29.7ms | ActiveRecord: 0.0ms | Allocations: 7076)
+
+
+Started POST "/users" for ::1 at 2025-06-17 15:19:37 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nickname"=>"gvrfa", "email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "last_name"=>"arg", "first_name"=>"awgr", "last_name_kana"=>"agwr", "first_name_kana"=>"arg", "birth_date(1i)"=>"1930", "birth_date(2i)"=>"2", "birth_date(3i)"=>"29"}, "commit"=>"会員登録"}
+  [1m[36mTRANSACTION (21.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (37.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = CAST('maddieqqie@gmail.com' AS BINARY) LIMIT 1[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 7.0ms | Allocations: 609)
+  Rendered shared/_second-footer.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.9ms | Allocations: 4489)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 7971)
+Completed 422 Unprocessable Content in 524ms (Views: 22.5ms | ActiveRecord: 63.7ms | Allocations: 16981)
+
+
