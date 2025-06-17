@@ -3,8 +3,7 @@
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
-# breaking changes in upgrades (i.e., in the event that future versions of
-# Devise change the default values for those options).
+# breaking changes in upgrades (i.e., in the event that future versions ofDevise change the default values for those options).
 #
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
@@ -14,7 +13,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '779c742a91844099c49668a55a621152cdd6bd8c876a5e1895e4986f819a438665d12673e1048587d07bd41bacb0f5da62d7b8455b213f1a175020ae65d5ad81'
+  # config.secret_key = '8fc64251bcb87531b09ed36d75b906b4317375bee869d3d7e5c11b2f02e1149e6eee1a447692a17d02b9492ed6bd47a0bbd36ef5de5ca170aba7f4c1437828a8'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +125,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'a1d1f3b17c062d6fe549880e68000d76fe38bc2e3de99411427ea6241ee03108df9b0e6c29bd65d91a47d30f9868acff8df1732406ee7682452c2b3edbbee69c'
+  # config.pepper = '401b6336cabcb8af5c43a5aaf1fb4fa3229f9ff1b8ab6caf6e4946fafa570940f78bfb0147f589f44d26455100fc54d7ae8d56ace0ab69480a5df1bcfb2458c9'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -310,4 +309,4 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-end
+end 
