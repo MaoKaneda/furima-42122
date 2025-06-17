@@ -120,6 +120,7 @@ a {
 
 /* //FURIMAが選ばれる3つの理由部分 */
 
+
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
@@ -144,6 +145,20 @@ a {
 .ad-explain {
   font-size: 2.5vh;
   line-height: 30px;
+}
+
+.store-btn {
+  display: flex;
+  margin-top: 24px;
+}
+
+.apple-btn {
+  margin-right: 1vw;
+  height: 9vh;
+}
+
+.google-btn {
+  height: 9vh;
 }
 
 /* //画面中央の「会員数日本一位」帯部分 */
@@ -199,6 +214,7 @@ a {
 /* //FURIMAの特徴 */
 
 /* 商品一覧 */
+
 .item-contents {
   background-color: #FFF;
   display: flex;
@@ -234,6 +250,7 @@ a {
   background-color: #FFF;
 }
 
+
 .item-img-content {
   position: relative;
 }
@@ -258,6 +275,7 @@ a {
   font: bold;
 }
 
+
 .item-info {
   background-color: #FFF;
   color: black;
@@ -274,6 +292,7 @@ a {
   justify-content: space-between;
 }
 
+
 .star-btn {
   display: flex;
   align-items: center;
@@ -288,3 +307,5 @@ a {
 .star-count {
   font-size: 2vh;
 }
+
+/* //商品一覧 */
