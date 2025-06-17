@@ -1402,3 +1402,307 @@ Processing by Devise::RegistrationsController#create as TURBO_STREAM
 Completed 422 Unprocessable Content in 524ms (Views: 22.5ms | ActiveRecord: 63.7ms | Allocations: 16981)
 
 
+Started GET "/users/sign_up" for ::1 at 2025-06-17 19:26:14 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (6.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 84.2ms | Allocations: 34842)
+  Rendered shared/_second-footer.html.erb (Duration: 0.4ms | Allocations: 412)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 94.4ms | Allocations: 39484)
+  Rendered layout layouts/application.html.erb (Duration: 107.9ms | Allocations: 57415)
+Completed 200 OK in 376ms (Views: 292.5ms | ActiveRecord: 45.0ms | Allocations: 361921)
+
+
+Started POST "/users" for ::1 at 2025-06-17 19:26:40 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nickname"=>"MAO", "email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "last_name"=>"兼田", "first_name"=>"まお", "last_name_kana"=>"カネダ", "first_name_kana"=>"マオ", "birth_date(1i)"=>"2000", "birth_date(2i)"=>"", "birth_date(3i)"=>""}, "commit"=>"会員登録"}
+  [1m[36mTRANSACTION (23.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (36.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = CAST('maddieqqie@gmail.com' AS BINARY) LIMIT 1[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 5.0ms | Allocations: 610)
+  Rendered shared/_second-footer.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3670)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7152)
+Completed 422 Unprocessable Content in 495ms (Views: 14.6ms | ActiveRecord: 62.6ms | Allocations: 17009)
+
+
+Started POST "/users" for ::1 at 2025-06-17 19:27:25 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nickname"=>"MAO", "email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "last_name"=>"兼田", "first_name"=>"まお", "last_name_kana"=>"カネダ", "first_name_kana"=>"マオ", "birth_date(1i)"=>"2000", "birth_date(2i)"=>"10", "birth_date(3i)"=>"10"}, "commit"=>"会員登録"}
+  [1m[36mTRANSACTION (42.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (40.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = CAST('maddieqqie@gmail.com' AS BINARY) LIMIT 1[0m
+  [1m[36mUser Create (47.8ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `confirmation_token`, `confirmed_at`, `confirmation_sent_at`, `unconfirmed_email`, `failed_attempts`, `unlock_token`, `locked_at`, `nickname`, `last_name`, `first_name`, `last_name_kana`, `first_name_kana`, `birth_date`, `created_at`, `updated_at`) VALUES ('maddieqqie@gmail.com', '$2a$12$106gtMevkDWaWd/XMmG0.O.7ohcM0XTPyiBxWLHm3P2afoXEzoIzq', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 'MAO', '兼田', 'まお', 'カネダ', 'マオ', '2000-10-10', '2025-06-17 10:27:26.162723', '2025-06-17 10:27:26.162723')[0m
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 471ms (ActiveRecord: 145.3ms | Allocations: 7949)
+
+
+Started GET "/" for ::1 at 2025-06-17 19:27:26 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 15.6ms | Allocations: 2928)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 1611)
+  Rendered items/index.html.erb within layouts/application (Duration: 33.0ms | Allocations: 12222)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 15845)
+Completed 200 OK in 49ms (Views: 36.3ms | ActiveRecord: 2.5ms | Allocations: 18590)
+
+
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-06-17 19:28:01 +0900
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (121.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 227ms (ActiveRecord: 121.1ms | Allocations: 2716)
+
+
+Started GET "/" for ::1 at 2025-06-17 19:28:01 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 6.9ms | Allocations: 1470)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 1075)
+  Rendered items/index.html.erb within layouts/application (Duration: 20.3ms | Allocations: 8237)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 11734)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.0ms | Allocations: 12011)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-06-17 19:28:02 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 0.8ms | Allocations: 609)
+  Rendered shared/_second-footer.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2903)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 6385)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 7068)
+
+
+Started POST "/users" for ::1 at 2025-06-17 19:28:18 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nickname"=>"MAOKANEDA", "email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "last_name"=>"兼田", "first_name"=>"麻央", "last_name_kana"=>"カネダ", "first_name_kana"=>"マオ", "birth_date(1i)"=>"2000", "birth_date(2i)"=>"", "birth_date(3i)"=>""}, "commit"=>"会員登録"}
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (10.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = CAST('maddieqqie@gmail.com' AS BINARY) LIMIT 1[0m
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 2.1ms | Allocations: 614)
+  Rendered shared/_second-footer.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4024)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 7587)
+Completed 422 Unprocessable Content in 310ms (Views: 11.8ms | ActiveRecord: 27.8ms | Allocations: 12998)
+
+
+Started POST "/users" for ::1 at 2025-06-17 19:28:41 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nickname"=>"MAOKANEDA", "email"=>"maddieqqie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "last_name"=>"兼田", "first_name"=>"麻央", "last_name_kana"=>"カネダ", "first_name_kana"=>"マオ", "birth_date(1i)"=>"2000", "birth_date(2i)"=>"10", "birth_date(3i)"=>"10"}, "commit"=>"会員登録"}
+  [1m[36mTRANSACTION (26.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (49.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = CAST('maddieqqie@gmail.com' AS BINARY) LIMIT 1[0m
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 9.0ms | Allocations: 614)
+  Rendered shared/_second-footer.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 18.7ms | Allocations: 3433)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 6923)
+Completed 422 Unprocessable Content in 454ms (Views: 36.1ms | ActiveRecord: 88.5ms | Allocations: 12333)
+
+
+Started POST "/users" for ::1 at 2025-06-17 19:29:36 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nickname"=>"MAOKANEDA", "email"=>"maddieqqie@gmail.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "last_name"=>"兼田", "first_name"=>"麻央", "last_name_kana"=>"カネダ", "first_name_kana"=>"マオ", "birth_date(1i)"=>"2000", "birth_date(2i)"=>"10", "birth_date(3i)"=>"10"}, "commit"=>"会員登録"}
+  [1m[36mTRANSACTION (21.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (37.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = CAST('maddieqqie@gmail.co' AS BINARY) LIMIT 1[0m
+  [1m[36mUser Create (20.5ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `confirmation_token`, `confirmed_at`, `confirmation_sent_at`, `unconfirmed_email`, `failed_attempts`, `unlock_token`, `locked_at`, `nickname`, `last_name`, `first_name`, `last_name_kana`, `first_name_kana`, `birth_date`, `created_at`, `updated_at`) VALUES ('maddieqqie@gmail.co', '$2a$12$KwGasn399TP8jIIbRgyG1ujKocxCsLdjM7kX.WFcufYiNHYj3cjAq', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 'MAOKANEDA', '兼田', '麻央', 'カネダ', 'マオ', '2000-10-10', '2025-06-17 10:29:36.678080', '2025-06-17 10:29:36.678080')[0m
+  [1m[36mTRANSACTION (43.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 446ms (ActiveRecord: 123.0ms | Allocations: 6221)
+
+
+Started GET "/" for ::1 at 2025-06-17 19:29:36 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 19.0ms | Allocations: 2099)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 1082)
+  Rendered items/index.html.erb within layouts/application (Duration: 34.8ms | Allocations: 8950)
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 12437)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 1.4ms | Allocations: 12712)
+
+
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-06-17 19:31:17 +0900
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (41.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 152ms (ActiveRecord: 40.9ms | Allocations: 1982)
+
+
+Started GET "/" for ::1 at 2025-06-17 19:31:17 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 6.4ms | Allocations: 1463)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 1082)
+  Rendered items/index.html.erb within layouts/application (Duration: 20.5ms | Allocations: 8319)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 11890)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms | Allocations: 12167)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-06-17 19:31:17 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 0.6ms | Allocations: 612)
+  Rendered shared/_second-footer.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2906)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 6397)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 7072)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-06-17 19:31:18 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 0.9ms | Allocations: 609)
+  Rendered shared/_second-footer.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1582)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5067)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 6004)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-06-17 19:31:31 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maddieqqie@gmail.co", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (69.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'maddieqqie@gmail.co' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 414ms (ActiveRecord: 68.9ms | Allocations: 4685)
+
+
+Started GET "/" for ::1 at 2025-06-17 19:31:32 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 17.2ms | Allocations: 2072)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 1075)
+  Rendered items/index.html.erb within layouts/application (Duration: 31.2ms | Allocations: 8861)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 12351)
+Completed 200 OK in 36ms (Views: 28.4ms | ActiveRecord: 7.6ms | Allocations: 12627)
+
+
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-06-17 19:32:14 +0900
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (48.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 159ms (ActiveRecord: 48.6ms | Allocations: 1966)
+
+
+Started GET "/" for ::1 at 2025-06-17 19:32:14 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 6.1ms | Allocations: 1451)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 1082)
+  Rendered items/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 8303)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 11874)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 12150)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-06-17 19:32:14 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 0.7ms | Allocations: 612)
+  Rendered shared/_second-footer.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2907)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6397)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 7096)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-06-17 19:32:15 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 2.3ms | Allocations: 609)
+  Rendered shared/_second-footer.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1234)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 4716)
+Completed 200 OK in 31ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 5438)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-06-17 19:32:26 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maddieqqie@gmail.c", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (56.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'maddieqqie@gmail.c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 124ms (ActiveRecord: 56.5ms | Allocations: 1703)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maddieqqie@gmail.c", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 1.6ms | Allocations: 609)
+  Rendered shared/_second-footer.html.erb (Duration: 0.1ms | Allocations: 260)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1214)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4696)
+Completed 200 OK in 270ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 5213)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-06-17 19:32:52 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maddieqqie@gmail.co", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (49.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'maddieqqie@gmail.co' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 379ms (ActiveRecord: 49.7ms | Allocations: 2548)
+
+
+Started GET "/" for ::1 at 2025-06-17 19:32:53 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 9.4ms | Allocations: 2071)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 1075)
+  Rendered items/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 8851)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 12341)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 4.2ms | Allocations: 12617)
+
+
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-06-17 19:33:02 +0900
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (47.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 110ms (ActiveRecord: 46.9ms | Allocations: 1958)
+
+
+Started GET "/" for ::1 at 2025-06-17 19:33:02 +0900
+Processing by ItemsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 5.9ms | Allocations: 1454)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 1078)
+  Rendered items/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 8268)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 11766)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 12042)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-06-17 19:33:02 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 0.7ms | Allocations: 612)
+  Rendered shared/_second-footer.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2906)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 6388)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 7070)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (13.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m

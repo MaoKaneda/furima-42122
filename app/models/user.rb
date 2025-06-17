@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :last_name_kana, presence: true, format: { with: /\A[ァ-ヶー]+\z/, message: 'is invalid' }
   validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー]+\z/, message: 'is invalid' }
   validates :birth_date, presence: true
+  validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/, message: 'is invalid' }
 
   has_many :items
   has_many :orders

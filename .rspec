@@ -1,2 +1,1 @@
---require spec_helperAdd commentMore actions
---format documentation
+--require spec_helper
