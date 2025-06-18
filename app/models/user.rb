@@ -12,6 +12,6 @@ class User < ApplicationRecord
   validates :birth_date, presence: true
   validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/, message: 'is invalid' }
 
-  has_many :items
-  has_many :orders
+  # has_many :items
+  # has_many :orders
 end
