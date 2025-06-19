@@ -130,15 +130,15 @@
       <% if @items.present? %>
         <% @items.each do |item| %>
           <li class='list'>
-            <%= link_to item_path(item.id) do %>
+            <%= link_to "#" do %>
               <div class='item-img-content'>
                 <%= image_tag item.image, class: "item-img" %>
 
-                <% if item.order.present? %>
+                <%# 商品が売れていればsold outを表示しましょう %>
                 <div class='sold-out'>
                   <span>Sold Out!!</span>
                 </div>
-                <% end %>
+                <%# //商品が売れていればsold outを表示しましょう %>
 
               </div>
               <div class='item-info'>
@@ -179,10 +179,8 @@
   </div>
   <%# /商品一覧 %>
 </div>
-<%= link_to(root_path, class: 'purchase-btn') do %>
+<%= link_to(new_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
 <%= render "shared/footer" %>
-
-
