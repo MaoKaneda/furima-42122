@@ -130,13 +130,9 @@
       <% if @items.present? %>
         <% @items.each do |item| %>
           <li class='list'>
-            <%= link_to "#" do %>
+            <%= link_to item_path(item.id) do %>
               <div class='item-img-content'>
-                <% if item.image.attached? %>
-                  <%= image_tag item.image, class: "item-img" %>
-                <% else %>
-                  <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-                <% end %>
+                <%= image_tag item.image, class: "item-img" %>
 
                 <%# 商品が売れていればsold outを表示しましょう %>
                 <div class='sold-out'>
