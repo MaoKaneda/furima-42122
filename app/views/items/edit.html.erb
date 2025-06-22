@@ -23,6 +23,13 @@ app/assets/stylesheets/items/new.css %>
         </p>
         <%= f.file_field :image, id:"item-image" %>
       </div>
+      <%# 現在の画像を表示 %>
+      <% if @item.image.attached? %>
+        <div class="current-image">
+          <p>現在の画像:</p>
+          <%= image_tag @item.image, class: "current-item-image" %>
+        </div>
+      <% end %>
     </div>
     <%# /商品画像 %>
     <%# 商品名と商品説明 %>
