@@ -7,6 +7,10 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    
+    <!-- Pay.jpライブラリ -->
+    <script type="text/javascript" src="https://js.pay.jp/v2/pay.js"></script>
+    
     <%= javascript_importmap_tags %>
   </head>
 
@@ -14,3 +18,4 @@
     <%= yield %>
   </body>
 </html>
+
