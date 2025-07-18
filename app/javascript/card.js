@@ -90,7 +90,6 @@ const pay = () => {
       payjp.createToken(numberElement).then(function(response) {
         if (response.error) {
           console.error('Pay.jpエラー:', response.error);
-          alert('カード情報にエラーがあります: ' + response.error.message);
         } else {
           console.log('トークン作成成功:', response.id);
           
@@ -112,7 +111,6 @@ const pay = () => {
         }
       }).catch(function(error) {
         console.error('トークン生成エラー:', error);
-        alert('トークンの生成に失敗しました。もう一度お試しください。');
       });
     });
     
