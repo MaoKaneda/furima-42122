@@ -12,17 +12,41 @@ class OrderAddress
   validates :token, presence: true
 
   def save
+    Rails.logger.info '=== OrderAddress save開始 ==='
+    Rails.logger.info "valid?: #{valid?}"
+    Rails.logger.info "errors: #{errors.full_messages}" unless valid?
+    Rails.logger.info "属性値: postal_code=#{postal_code}, prefecture_id=#{prefecture_id}, city=#{city}, house_number=#{house_number}, phone_number=#{phone_number}, user_id=#{user_id}, item_id=#{item_id}, token=#{token}"
+
     return false unless valid?
 
-    order = Order.create(user_id: user_id, item_id: item_id)
-    Address.create(
-      postal_code: postal_code,
-      prefecture_id: prefecture_id,
-      city: city,
-      house_number: house_number,
-      building_name: building_name,
-      phone_number: phone_number,
-      order_id: order.id
-    )
+    ActiveRecord::Base.transaction do
+      Rails.logger.info "Order作成開始: user_id=#{user_id}, item_id=#{item_id}"
+      order = Order.create!(user_id: user_id, item_id: item_id)
+      Rails.logger.info "Order作成成功: id=#{order.id}"
+
+      Rails.logger.info "Address作成開始: order_id=#{order.id}"
+      Rails.logger.info "Address属性: postal_code=#{postal_code}, prefecture_id=#{prefecture_id}, city=#{city}, house_number=#{house_number}, building_name=#{building_name}, phone_number=#{phone_number}"
+      address = Address.create!(
+        postal_code: postal_code,
+        prefecture_id: prefecture_id.to_i,
+        city: city,
+        house_number: house_number,
+        building_name: building_name,
+        phone_number: phone_number,
+        order_id: order.id
+      )
+      Rails.logger.info "Address作成成功: id=#{address.id}"
+      Rails.logger.info '=== OrderAddress save完了 ==='
+      true
+    end
+  rescue ActiveRecord::RecordInvalid => e
+    Rails.logger.error "OrderAddress保存エラー: #{e.message}"
+    Rails.logger.error "Orderエラー: #{e.record.errors.full_messages}" if e.record.is_a?(Order)
+    Rails.logger.error "Addressエラー: #{e.record.errors.full_messages}" if e.record.is_a?(Address)
+    false
+  rescue StandardError => e
+    Rails.logger.error "予期しないエラー: #{e.message}"
+    Rails.logger.error e.backtrace.join("\n")
+    false
   end
 end
