@@ -173,10 +173,7 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     method_source (1.1.0)
-    mime-types (3.7.0)
-      logger
-      mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2025.0708)
+
     mini_magick (5.2.0)
       benchmark
       logger
@@ -206,9 +203,7 @@ GEM
     parser (3.3.7.4)
       ast (~> 2.4.1)
       racc
-    payjp (1.1.7)
-      base64
-      rest-client (~> 2.0)
+
     pg (1.5.9)
     pp (0.6.2)
       prettyprint
@@ -374,13 +369,13 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
-  gon
+
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
   mini_magick
   mysql2 (~> 0.5)
-  payjp
+
   pg
   pry-rails
   puma (>= 5.0)

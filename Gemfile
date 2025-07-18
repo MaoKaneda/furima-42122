@@ -88,7 +88,3 @@ gem 'image_processing', '~> 1.2'
 gem 'image_processing', '~> 1.2'
 gem 'active_hash'
 
-gem 'pry-rails'
-gem 'payjp'
-gem 'gon'
-gem 'dotenv-rails', groups: [:development, :test]
