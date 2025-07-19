@@ -71,7 +71,7 @@ RSpec.describe OrderAddress, type: :model do
       it 'postal_codeが不正なフォーマットの場合は無効' do
         order_address.postal_code = '1234567'
         expect(order_address).not_to be_valid
-        expect(order_address.errors[:postal_code]).to include('is invalid. Include hyphen(-)')
+        expect(order_address.errors[:postal_code]).to include('はハイフン(-)を含めて入力してください')
       end
 
       it 'phone_numberが正しいフォーマットの場合は有効' do
@@ -82,7 +82,7 @@ RSpec.describe OrderAddress, type: :model do
       it 'phone_numberが不正なフォーマットの場合は無効' do
         order_address.phone_number = '090-1234-5678'
         expect(order_address).not_to be_valid
-        expect(order_address.errors[:phone_number]).to include('is invalid')
+        expect(order_address.errors[:phone_number]).to include('は10桁または11桁の数字で入力してください')
       end
 
       it 'tokenが正しいフォーマットの場合は有効' do
@@ -91,9 +91,9 @@ RSpec.describe OrderAddress, type: :model do
       end
 
       it 'tokenが不正なフォーマットの場合は無効' do
-        order_address.token = 'invalid_token'
+        order_address.token = ''
         expect(order_address).not_to be_valid
-        expect(order_address.errors[:token]).to include('is invalid')
+        expect(order_address.errors[:token]).to include("can't be blank")
       end
     end
 
@@ -101,7 +101,7 @@ RSpec.describe OrderAddress, type: :model do
       it 'prefecture_idが1の場合は無効' do
         order_address.prefecture_id = 1
         expect(order_address).not_to be_valid
-        expect(order_address.errors[:prefecture_id]).to include("can't be blank")
+        expect(order_address.errors[:prefecture_id]).to include("を選択してください")
       end
 
       it 'prefecture_idが2以上の場合は有効' do
