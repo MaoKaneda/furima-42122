@@ -1,5 +1,5 @@
 //= link items_price.js
-//= link card.js
+
 //= link_tree ../images
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
