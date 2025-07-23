@@ -3,7 +3,9 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :destroy]
 
   def index
-    @items = Item.order('created_at DESC')
+    # 一時的にデータベースアクセスを無効化
+    @items = []
+    # @items = Item.order('created_at DESC')
   end
 
   def new

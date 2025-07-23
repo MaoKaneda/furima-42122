@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_auth
+  # 一時的にBasic認証を無効化
+  # before_action :basic_auth
 
   private
 
