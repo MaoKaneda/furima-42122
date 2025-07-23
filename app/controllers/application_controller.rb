@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
 
     authenticate_or_request_with_http_basic do |username, password|
       Rails.logger.info "Basic Auth Attempt: username=#{username}, password=#{password}"
-      result = username == ENV['BASIC_AUTH_USER'] && password == ENV['BASIC_AUTH_PASSWORD']
+      # 一時的に固定値でテスト
+      result = username == 'admin' && password == 'password123'
       Rails.logger.info "Basic Auth Result: #{result}"
       result
     end
