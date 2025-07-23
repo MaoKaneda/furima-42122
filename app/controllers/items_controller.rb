@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :force_basic_auth, only: [:index]
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
   before_action :set_item, only: [:edit, :show, :update, :destroy]
 
@@ -46,6 +47,42 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def force_basic_auth
+    Rails.logger.info '=== ItemsController Force Basic Auth ==='
+    Rails.logger.info "Authorization header: #{request.headers['HTTP_AUTHORIZATION']}"
+
+    unless request.headers['HTTP_AUTHORIZATION']
+      Rails.logger.info 'No authorization header - sending 401'
+      response.headers['WWW-Authenticate'] = 'Basic realm="FURIMA"'
+      render plain: 'Authentication required', status: :unauthorized
+      return
+    end
+
+    # Basic認証のヘッダーを解析
+    auth_header = request.headers['HTTP_AUTHORIZATION']
+    if auth_header.start_with?('Basic ')
+      encoded_credentials = auth_header.split(' ').last
+      decoded_credentials = Base64.decode64(encoded_credentials)
+      username, password = decoded_credentials.split(':')
+
+      Rails.logger.info "Parsed credentials - username: #{username}, password: #{password}"
+
+      if username == 'admin' && password == 'password123'
+        Rails.logger.info 'Authentication successful'
+        return
+      else
+        Rails.logger.info 'Authentication failed'
+        response.headers['WWW-Authenticate'] = 'Basic realm="FURIMA"'
+        render plain: 'Authentication failed', status: :unauthorized
+        return
+      end
+    end
+
+    Rails.logger.info 'Invalid authorization header format'
+    response.headers['WWW-Authenticate'] = 'Basic realm="FURIMA"'
+    render plain: 'Invalid authentication format', status: :unauthorized
+  end
 
   def item_params
     params.require(:item).permit(:name, :description, :category_id, :condition_id, :delivery_fee_id, :prefecture_id,
