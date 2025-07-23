@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :basic_auth_test, only: [:index]
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
   before_action :set_item, only: [:edit, :show, :update, :destroy]
 
@@ -54,5 +55,15 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def basic_auth_test
+    Rails.logger.info '=== ItemsController Basic Auth Test ==='
+    authenticate_or_request_with_http_basic('FURIMA') do |username, password|
+      Rails.logger.info "ItemsController Auth: username=#{username}, password=#{password}"
+      result = username == 'admin' && password == 'password123'
+      Rails.logger.info "ItemsController Auth Result: #{result}"
+      result
+    end
   end
 end
