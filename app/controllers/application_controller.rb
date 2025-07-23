@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   private
 
   def basic_auth
+    Rails.logger.info '=== BASIC AUTH METHOD CALLED ==='
+    Rails.logger.info "Controller: #{controller_name}"
+    Rails.logger.info "Action: #{action_name}"
     Rails.logger.info "Basic Auth Debug: BASIC_AUTH_USER=#{ENV['BASIC_AUTH_USER']}"
     Rails.logger.info "Basic Auth Debug: BASIC_AUTH_PASSWORD=#{ENV['BASIC_AUTH_PASSWORD']}"
 
