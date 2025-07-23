@@ -1,9 +1,12 @@
 class ItemsController < ApplicationController
+  Rails.logger.info '=== ItemsController loaded ==='
+
   before_action :basic_auth_test, only: [:index]
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
   before_action :set_item, only: [:edit, :show, :update, :destroy]
 
   def index
+    Rails.logger.info '=== ItemsController#index called ==='
     @items = Item.order('created_at DESC')
   end
 

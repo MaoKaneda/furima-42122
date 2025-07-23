@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  Rails.logger.info '=== ApplicationController loaded ==='
+
   before_action :basic_auth
 
   private
