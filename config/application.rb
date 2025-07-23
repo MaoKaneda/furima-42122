@@ -13,7 +13,21 @@ module Furima42122
     config.active_storage.variant_processor = :mini_magick
     
     # アセットプリコンパイルの設定
-    config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif *.svg )
+    config.assets.precompile += %w( 
+      furima-logo-color.png 
+      furima-logo-white.png 
+      search.png 
+      star.png 
+      item-sample.png 
+      icon_camera.png 
+      google-play.png 
+      app-store.svg 
+      *.png 
+      *.jpg 
+      *.jpeg 
+      *.gif 
+      *.svg 
+    )
     
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
