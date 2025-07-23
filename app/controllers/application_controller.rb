@@ -4,13 +4,14 @@ class ApplicationController < ActionController::Base
   private
 
   def basic_auth
-    Rails.logger.info '=== BASIC AUTH METHOD CALLED ==='
-    Rails.logger.info "Controller: #{controller_name}"
-    Rails.logger.info "Action: #{action_name}"
+    Rails.logger.info '=== Basic Auth Method Started ==='
+    Rails.logger.info "Current controller: #{controller_name}"
+    Rails.logger.info "Current action: #{action_name}"
     Rails.logger.info "Basic Auth Debug: BASIC_AUTH_USER=#{ENV['BASIC_AUTH_USER']}"
     Rails.logger.info "Basic Auth Debug: BASIC_AUTH_PASSWORD=#{ENV['BASIC_AUTH_PASSWORD']}"
 
-    authenticate_or_request_with_http_basic do |username, password|
+    # 強制的にBasic認証を要求
+    authenticate_or_request_with_http_basic('FURIMA') do |username, password|
       Rails.logger.info "Basic Auth Attempt: username=#{username}, password=#{password}"
       # 一時的に固定値でテスト
       result = username == 'admin' && password == 'password123'
