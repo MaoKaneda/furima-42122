@@ -30,3 +30,10 @@
 .logout-btn:hover {
   text-decoration: underline;
 }
+
+/* ログアウトフォームのスタイル */
+.logout-btn form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
