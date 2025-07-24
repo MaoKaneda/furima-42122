@@ -37,3 +37,19 @@
   margin: 0;
   padding: 0;
 }
+
+.logout-btn input[type="submit"] {
+  background: none;
+  border: none;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.logout-btn input[type="submit"]:hover {
+  text-decoration: underline;
+}
