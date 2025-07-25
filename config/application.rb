@@ -18,6 +18,8 @@ module Furima42122
       furima-logo-white.png 
       search.png 
       star.png 
+      flag.png
+      comment.png
       item-sample.png 
       icon_camera.png 
       google-play.png 
