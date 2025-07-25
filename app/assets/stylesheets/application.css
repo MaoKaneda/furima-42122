@@ -53,3 +53,43 @@
 .logout-btn input[type="submit"]:hover {
   text-decoration: underline;
 }
+
+/* Second Header スタイル */
+.second-page-header {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.second-page-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.second-furima-icon {
+  height: 40px;
+  width: auto;
+}
+
+/* Second Footer スタイル */
+.second-page-footer {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 50px;
+}
+
+.second-page-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.second-page-footer-text {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
