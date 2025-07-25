@@ -49,7 +49,7 @@ module Furima42122
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Deviseの設定
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
   end
 end
