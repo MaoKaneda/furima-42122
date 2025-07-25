@@ -54,5 +54,7 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, alert: '商品が見つかりませんでした'
   end
 end
