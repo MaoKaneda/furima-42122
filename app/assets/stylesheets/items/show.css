@@ -71,6 +71,34 @@
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  border: none;
+  cursor: pointer;
+}
+
+.item-destroy:hover {
+  background-color: #ccc;
+}
+
+.item-destroy form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.item-destroy input[type="submit"] {
+  background-color: lightgray;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.item-destroy input[type="submit"]:hover {
+  background-color: #ccc;
 }
 
 .item-explain-box {
