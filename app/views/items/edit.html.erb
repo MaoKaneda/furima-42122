@@ -177,8 +177,8 @@ const price = () => {
       const tax = Math.floor(inputValue * 0.1);
       const profit = inputValue - tax;
 
-      addTaxDom.innerHTML = tax;
-      profitDom.innerHTML = profit;
+      addTaxDom.innerHTML = tax.toLocaleString();
+      profitDom.innerHTML = profit.toLocaleString();
     });
   }
 };
