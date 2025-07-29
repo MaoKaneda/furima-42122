@@ -21,10 +21,31 @@ class OrdersController < ApplicationController
       return
     end
 
-    Rails.logger.info '購入画面を表示'
-    # テスト用のダミーキー（本番環境では実際のキーを設定）
-    gon.public_key = ENV['PAYJP_PUBLIC_KEY'] || 'pk_test_dummy_key_for_testing'
-    @order_address = OrderAddress.new
+    Rails.logger.info '購入画面を表示開始'
+
+    # gonの設定
+    begin
+      gon.public_key = ENV['PAYJP_PUBLIC_KEY'] || 'pk_test_dummy_key_for_testing'
+      Rails.logger.info "gon.public_key設定完了: #{gon.public_key}"
+    rescue StandardError => e
+      Rails.logger.error "gon設定でエラー: #{e.message}"
+      Rails.logger.error e.backtrace.join("\n")
+      redirect_to root_path, alert: '購入画面の設定に失敗しました'
+      return
+    end
+
+    # OrderAddressの初期化
+    begin
+      @order_address = OrderAddress.new
+      Rails.logger.info "OrderAddress初期化完了: #{@order_address.inspect}"
+    rescue StandardError => e
+      Rails.logger.error "OrderAddress初期化でエラー: #{e.message}"
+      Rails.logger.error e.backtrace.join("\n")
+      redirect_to root_path, alert: '購入情報の初期化に失敗しました'
+      return
+    end
+
+    Rails.logger.info '購入画面を表示終了'
     Rails.logger.info '=== OrdersController#index 終了 ==='
   rescue StandardError => e
     Rails.logger.error "OrdersController#index でエラーが発生: #{e.message}"
