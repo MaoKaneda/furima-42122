@@ -3,20 +3,29 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
 
   def index
+    Rails.logger.info '=== OrdersController#index 開始 ==='
+    Rails.logger.info "current_user: #{current_user.inspect}"
+    Rails.logger.info "@item: #{@item.inspect}"
+    Rails.logger.info "@item.user: #{@item.user.inspect}"
+
     # ログインチェックはbefore_actionで行われる
     if current_user == @item.user
+      Rails.logger.info '自分が出品した商品のためリダイレクト'
       redirect_to root_path, alert: '自分が出品した商品は購入できません'
       return
     end
 
     if @item.order.present?
+      Rails.logger.info '売り切れ商品のためリダイレクト'
       redirect_to root_path, alert: 'この商品は既に売り切れています'
       return
     end
 
+    Rails.logger.info '購入画面を表示'
     # テスト用のダミーキー（本番環境では実際のキーを設定）
     gon.public_key = ENV['PAYJP_PUBLIC_KEY'] || 'pk_test_dummy_key_for_testing'
     @order_address = OrderAddress.new
+    Rails.logger.info '=== OrdersController#index 終了 ==='
   end
 
   def create
@@ -76,7 +85,14 @@ class OrdersController < ApplicationController
   private
 
   def set_item
+    Rails.logger.info '=== set_item 開始 ==='
+    Rails.logger.info "params[:item_id]: #{params[:item_id]}"
     @item = Item.find(params[:item_id])
+    Rails.logger.info "@item: #{@item.inspect}"
+    Rails.logger.info '=== set_item 終了 ==='
+  rescue ActiveRecord::RecordNotFound => e
+    Rails.logger.error "商品が見つかりません: #{e.message}"
+    redirect_to root_path, alert: '商品が見つかりませんでした'
   end
 
   def order_params

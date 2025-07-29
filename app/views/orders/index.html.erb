@@ -126,3 +126,50 @@
   </div>
 </div>
 <%= render "shared/second-footer"%>
+
+<script src="https://js.pay.jp/v2/pay.js"></script>
+<script>
+  console.log('=== 購入画面JavaScript読み込み ===');
+  console.log('gon:', gon);
+  console.log('gon.public_key:', gon.public_key);
+</script>
+
+<script>
+// 購入画面用の簡易的なPay.jp初期化
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('購入画面のDOM読み込み完了');
+  
+  if (typeof Payjp !== 'undefined' && gon && gon.public_key) {
+    console.log('Pay.jp初期化開始');
+    const payjp = Payjp(gon.public_key);
+    const elements = payjp.elements();
+
+    const numberElement = elements.create('cardNumber', {
+      placeholder: '4242 4242 4242 4242'
+    });
+
+    const expiryElement = elements.create('cardExpiry', {
+      placeholder: '12/25'
+    });
+
+    const cvcElement = elements.create('cardCvc', {
+      placeholder: '123'
+    });
+
+    const numberForm = document.getElementById('number-form');
+    const expiryForm = document.getElementById('expiry-form');
+    const cvcForm = document.getElementById('cvc-form');
+
+    if (numberForm && expiryForm && cvcForm) {
+      numberElement.mount('#number-form');
+      expiryElement.mount('#expiry-form');
+      cvcElement.mount('#cvc-form');
+      console.log('Pay.jpフォーム要素をマウントしました');
+    } else {
+      console.error('Pay.jpフォーム要素が見つかりません');
+    }
+  } else {
+    console.error('Pay.jpまたはgon.public_keyが利用できません');
+  }
+});
+</script>
