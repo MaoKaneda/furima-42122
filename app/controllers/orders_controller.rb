@@ -26,6 +26,10 @@ class OrdersController < ApplicationController
     gon.public_key = ENV['PAYJP_PUBLIC_KEY'] || 'pk_test_dummy_key_for_testing'
     @order_address = OrderAddress.new
     Rails.logger.info '=== OrdersController#index 終了 ==='
+  rescue StandardError => e
+    Rails.logger.error "OrdersController#index でエラーが発生: #{e.message}"
+    Rails.logger.error e.backtrace.join("\n")
+    redirect_to root_path, alert: '購入画面の読み込みに失敗しました'
   end
 
   def create
@@ -93,6 +97,10 @@ class OrdersController < ApplicationController
   rescue ActiveRecord::RecordNotFound => e
     Rails.logger.error "商品が見つかりません: #{e.message}"
     redirect_to root_path, alert: '商品が見つかりませんでした'
+  rescue StandardError => e
+    Rails.logger.error "set_item でエラーが発生: #{e.message}"
+    Rails.logger.error e.backtrace.join("\n")
+    redirect_to root_path, alert: '商品情報の取得に失敗しました'
   end
 
   def order_params
