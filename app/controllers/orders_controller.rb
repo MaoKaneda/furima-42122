@@ -3,12 +3,19 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
 
   def index
-    if current_user == @item.user || @item.order.present?
-      redirect_to root_path
+    # ログインチェックはbefore_actionで行われる
+    if current_user == @item.user
+      redirect_to root_path, alert: '自分が出品した商品は購入できません'
       return
     end
 
-    gon.public_key = ENV['PAYJP_PUBLIC_KEY']
+    if @item.order.present?
+      redirect_to root_path, alert: 'この商品は既に売り切れています'
+      return
+    end
+
+    # テスト用のダミーキー（本番環境では実際のキーを設定）
+    gon.public_key = ENV['PAYJP_PUBLIC_KEY'] || 'pk_test_dummy_key_for_testing'
     @order_address = OrderAddress.new
   end
 
@@ -87,7 +94,7 @@ class OrdersController < ApplicationController
     token = order_params[:token]
     raise Payjp::InvalidRequestError.new('トークンが提供されていません') unless token.present?
 
-    charge = Payjp::Charge.create(
+    Payjp::Charge.create(
       amount: @item.price,
       card: token,
       currency: 'jpy',
@@ -97,7 +104,5 @@ class OrdersController < ApplicationController
         user_id: current_user.id
       }
     )
-
-    charge
   end
 end
