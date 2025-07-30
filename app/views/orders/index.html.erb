@@ -160,11 +160,10 @@
 
 <script>
 // 購入画面用のPay.jp初期化とトークン生成
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('購入画面のDOM読み込み完了');
+function initializePayjp() {
+  console.log('Pay.jp初期化開始');
   
   if (typeof Payjp !== 'undefined' && gon && gon.public_key) {
-    console.log('Pay.jp初期化開始');
     const payjp = Payjp(gon.public_key);
     const elements = payjp.elements();
 
@@ -185,6 +184,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const cvcForm = document.getElementById('cvc-form');
 
     if (numberForm && expiryForm && cvcForm) {
+      // 既存の要素をクリア
+      numberForm.innerHTML = '';
+      expiryForm.innerHTML = '';
+      cvcForm.innerHTML = '';
+      
       numberElement.mount('#number-form');
       expiryElement.mount('#expiry-form');
       cvcElement.mount('#cvc-form');
@@ -193,7 +197,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // フォーム送信時のトークン生成
       const form = document.getElementById('charge-form');
       if (form) {
-        form.addEventListener('submit', function(e) {
+        // 既存のイベントリスナーを削除
+        const newForm = form.cloneNode(true);
+        form.parentNode.replaceChild(newForm, form);
+        
+        newForm.addEventListener('submit', function(e) {
           e.preventDefault();
           console.log('フォーム送信開始');
           
@@ -210,10 +218,10 @@ document.addEventListener('DOMContentLoaded', function() {
               tokenInput.setAttribute('type', 'hidden');
               tokenInput.setAttribute('name', 'token');
               tokenInput.setAttribute('value', token);
-              form.appendChild(tokenInput);
+              newForm.appendChild(tokenInput);
               
               // フォームを送信
-              form.submit();
+              newForm.submit();
             }
           });
         });
@@ -224,5 +232,10 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.error('Pay.jpまたはgon.public_keyが利用できません');
   }
-});
+}
+
+// DOM読み込み完了時とTurboイベント時に初期化
+document.addEventListener('DOMContentLoaded', initializePayjp);
+document.addEventListener('turbo:load', initializePayjp);
+document.addEventListener('turbo:render', initializePayjp);
 </script>
