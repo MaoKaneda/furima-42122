@@ -48,6 +48,12 @@
           <h1 class='info-input-haedline'>
             クレジットカード情報入力
           </h1>
+          <div style="background-color: #f0f8ff; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccc;">
+            <p style="margin: 0; font-size: 14px; color: #333;"><strong>テスト用カード情報:</strong></p>
+            <p style="margin: 5px 0; font-size: 12px; color: #666;">カード番号: 4242 4242 4242 4242</p>
+            <p style="margin: 5px 0; font-size: 12px; color: #666;">有効期限: 12/25</p>
+            <p style="margin: 5px 0; font-size: 12px; color: #666;">CVC: 123</p>
+          </div>
           <div class="form-group">
             <div class='form-text-wrap'>
               <label class="form-text">カード情報</label>
@@ -218,7 +224,7 @@
       payjp.createToken(numberElement).then(function (response) {
         if (response.error) {
           console.error('トークン生成エラー:', response.error);
-          alert('カード情報に誤りがあります。');
+          alert('カード情報に誤りがあります。\n\nテスト用カード情報を使用してください:\nカード番号: 4242 4242 4242 4242\n有効期限: 12/25\nCVC: 123');
         } else {
           console.log('トークン生成成功:', response.id);
           const token = response.id;
@@ -233,7 +239,7 @@
         }
       }).catch(function(error) {
         console.error('Pay.jpエラー:', error);
-        alert('カード情報の処理中にエラーが発生しました。');
+        alert('カード情報の処理中にエラーが発生しました。\n\nテスト用カード情報を使用してください:\nカード番号: 4242 4242 4242 4242\n有効期限: 12/25\nCVC: 123');
       });
     });
   };
