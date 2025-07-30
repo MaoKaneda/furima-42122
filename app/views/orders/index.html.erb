@@ -159,7 +159,7 @@
 </script>
 
 <script>
-// 購入画面用の簡易的なPay.jp初期化
+// 購入画面用のPay.jp初期化とトークン生成
 document.addEventListener('DOMContentLoaded', function() {
   console.log('購入画面のDOM読み込み完了');
   
@@ -189,6 +189,35 @@ document.addEventListener('DOMContentLoaded', function() {
       expiryElement.mount('#expiry-form');
       cvcElement.mount('#cvc-form');
       console.log('Pay.jpフォーム要素をマウントしました');
+      
+      // フォーム送信時のトークン生成
+      const form = document.getElementById('charge-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          console.log('フォーム送信開始');
+          
+          payjp.createToken(numberElement).then(function(response) {
+            if (response.error) {
+              console.error('トークン生成エラー:', response.error);
+              alert('カード情報に誤りがあります。');
+            } else {
+              console.log('トークン生成成功:', response.id);
+              const token = response.id;
+              
+              // トークンをフォームに追加
+              const tokenInput = document.createElement('input');
+              tokenInput.setAttribute('type', 'hidden');
+              tokenInput.setAttribute('name', 'token');
+              tokenInput.setAttribute('value', token);
+              form.appendChild(tokenInput);
+              
+              // フォームを送信
+              form.submit();
+            }
+          });
+        });
+      }
     } else {
       console.error('Pay.jpフォーム要素が見つかりません');
     }
