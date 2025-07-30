@@ -73,7 +73,18 @@ const pay = () => {
   });
 };
 
+// Pay.jpが読み込まれた後に初期化を実行
+function initializePay() {
+  if (typeof Payjp !== 'undefined') {
+    console.log('Pay.jpが利用可能です。初期化を開始します。');
+    pay();
+  } else {
+    console.log('Pay.jpがまだ読み込まれていません。1秒後に再試行します。');
+    setTimeout(initializePay, 1000);
+  }
+}
+
 // 複数のイベントで初期化を試行
-window.addEventListener("turbo:load", pay);
-window.addEventListener("turbo:render", pay);
-window.addEventListener("DOMContentLoaded", pay); 
+window.addEventListener("turbo:load", initializePay);
+window.addEventListener("turbo:render", initializePay);
+window.addEventListener("DOMContentLoaded", initializePay); 
