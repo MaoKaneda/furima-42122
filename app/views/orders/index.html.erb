@@ -208,10 +208,33 @@ function initializePayjp() {
           payjp.createToken(numberElement).then(function(response) {
             if (response.error) {
               console.error('トークン生成エラー:', response.error);
-              alert('カード情報に誤りがあります。');
+              // エラーメッセージをフォーム上に表示
+              const errorDiv = document.createElement('div');
+              errorDiv.className = 'error-message';
+              errorDiv.style.color = 'red';
+              errorDiv.style.marginTop = '10px';
+              errorDiv.textContent = 'カード情報に誤りがあります。';
+              
+              // 既存のエラーメッセージを削除
+              const existingError = document.querySelector('.error-message');
+              if (existingError) {
+                existingError.remove();
+              }
+              
+              // エラーメッセージをカード情報セクションに追加
+              const cardSection = document.querySelector('.credit-card-form');
+              if (cardSection) {
+                cardSection.appendChild(errorDiv);
+              }
             } else {
               console.log('トークン生成成功:', response.id);
               const token = response.id;
+              
+              // エラーメッセージを削除
+              const existingError = document.querySelector('.error-message');
+              if (existingError) {
+                existingError.remove();
+              }
               
               // トークンをフォームに追加
               const tokenInput = document.createElement('input');

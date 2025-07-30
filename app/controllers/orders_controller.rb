@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
 
     # gonの設定
     begin
-      gon.public_key = ENV['PAYJP_PUBLIC_KEY'] || 'pk_test_dummy_key_for_testing'
+      gon.public_key = ENV['PAYJP_PUBLIC_KEY'] || 'pk_test_5e61c3a0396064bd8a5c7bdc'
       Rails.logger.info "gon.public_key設定完了: #{gon.public_key}"
     rescue StandardError => e
       Rails.logger.error "gon設定でエラー: #{e.message}"
