@@ -180,13 +180,13 @@
     const elements = payjp.elements();
     
     const numberElement = elements.create('cardNumber', {
-      placeholder: '4242 4242 4242 4242'
+      placeholder: 'カード番号'
     });
     const expiryElement = elements.create('cardExpiry', {
-      placeholder: '12/25'
+      placeholder: '月/年'
     });
     const cvcElement = elements.create('cardCvc', {
-      placeholder: '123'
+      placeholder: 'CVC'
     });
 
     // フォーム要素が存在するかチェック
