@@ -220,11 +220,30 @@
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       console.log('フォーム送信開始');
+      
+      // 既存のエラーメッセージをクリア
+      const existingError = document.querySelector('.card-error-message');
+      if (existingError) {
+        existingError.remove();
+      }
 
       payjp.createToken(numberElement).then(function (response) {
         if (response.error) {
           console.error('トークン生成エラー:', response.error);
-          alert('カード情報に誤りがあります。\n\nテスト用カード情報を使用してください:\nカード番号: 4242 4242 4242 4242\n有効期限: 12/25\nCVC: 123');
+          // 既存のエラーメッセージを削除
+          const existingError = document.querySelector('.card-error-message');
+          if (existingError) {
+            existingError.remove();
+          }
+          
+          // エラーメッセージをフォーム上に表示
+          const errorMessage = document.createElement('div');
+          errorMessage.className = 'card-error-message';
+          errorMessage.style.cssText = 'color: #ff6b6b; background-color: #ffe6e6; padding: 10px; margin: 10px 0; border: 1px solid #ff6b6b; border-radius: 5px;';
+          errorMessage.innerHTML = '<strong>カード情報エラー:</strong> カード情報に誤りがあります。<br>テスト用カード情報を使用してください:<br>カード番号: 4242 4242 4242 4242<br>有効期限: 12/25<br>CVC: 123';
+          
+          const creditCardForm = document.querySelector('.credit-card-form');
+          creditCardForm.appendChild(errorMessage);
         } else {
           console.log('トークン生成成功:', response.id);
           const token = response.id;
@@ -239,7 +258,20 @@
         }
       }).catch(function(error) {
         console.error('Pay.jpエラー:', error);
-        alert('カード情報の処理中にエラーが発生しました。\n\nテスト用カード情報を使用してください:\nカード番号: 4242 4242 4242 4242\n有効期限: 12/25\nCVC: 123');
+        // 既存のエラーメッセージを削除
+        const existingError = document.querySelector('.card-error-message');
+        if (existingError) {
+          existingError.remove();
+        }
+        
+        // エラーメッセージをフォーム上に表示
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'card-error-message';
+        errorMessage.style.cssText = 'color: #ff6b6b; background-color: #ffe6e6; padding: 10px; margin: 10px 0; border: 1px solid #ff6b6b; border-radius: 5px;';
+        errorMessage.innerHTML = '<strong>カード情報エラー:</strong> カード情報の処理中にエラーが発生しました。<br>テスト用カード情報を使用してください:<br>カード番号: 4242 4242 4242 4242<br>有効期限: 12/25<br>CVC: 123';
+        
+        const creditCardForm = document.querySelector('.credit-card-form');
+        creditCardForm.appendChild(errorMessage);
       });
     });
   };
